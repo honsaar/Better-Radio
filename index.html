@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Better Radio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+       body {
+           margin: auto;
+           max-width: 100ch;
+           min-width: 50ch;
+           font-family: 'Josefin Sans', sans-serif;
+       }
+    </style>
+</head>
+
+<body>
+   
+    <section>
+        <h1>Test</h1>
+    </section>
+
+    <section id='list'>
+     
+    </section>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    var list = $("#list");
+    $.get("https://itunes.apple.com/search?term=penumbra&entity=podcast&limit=5", function(res){
+     var thing = $.parseJSON(res).results;
+
+    for(var i = 0; i < thing.length; i++){
+        console.log(thing[i].collectionName, "by", thing[i].artistName);
+        console.log(thing[i]);
+        $.get(thing[i].feedUrl, function(data){
+            console.log(data);
+        });
+
+        var newDiv = "<div class='pod'><img src='" + thing[i].artworkUrl100 + "'><h5 id='title'>" + thing[i].collectionName + "</h5><p id='author'>" + thing[i].artistName + "</div>";
+        list.append(newDiv);
+    }
+});
+</script>
+
+</html></script>
