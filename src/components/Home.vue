@@ -3,12 +3,11 @@ import { ref } from "vue";
 
 // search bar biz here
 
-
-const post = await fetch(`https://itunes.apple.com/search?term=penumbra&entity=podcast&limit=5`).then(r => r.json())
+const post = await fetch(
+  `https://itunes.apple.com/search?term=penumbra&entity=podcast&limit=5`
+).then((r) => r.json());
 
 console.log(post.results);
-
-
 
 //  var list = $("#list");
 //     $.get("https://itunes.apple.com/search?term=penumbra&entity=podcast&limit=5", function(res){
@@ -24,41 +23,45 @@ console.log(post.results);
 //         var newDiv = "<div class='pod'><img src='" + thing[i].artworkUrl100 + "'><h5 id='title'>" + thing[i].collectionName + "</h5><p id='author'>" + thing[i].artistName + "</div>";
 //         list.append(newDiv);
 //     }
-
-
-
-
-
 </script>
 
 <template>
   <p>Home!</p>
-  <div class="podcast" v-for="pod in post.results" v-bind:key="pod.collectionId">
 
-    <img :src="pod.artworkUrl100">
-    <p class="title">{{ pod.collectionName }} </p>
-    <p class="subtitle">{{ pod.artistName }} </p>
-
-
+  <div class="container">
+    <div
+      class="podcast"
+      v-for="pod in post.results"
+      v-bind:key="pod.collectionId"
+    >
+      <router-link :to="'/pod/' + pod.collectionId">
+        <img :src="pod.artworkUrl600" style="width: 100%" />
+        <p class="title">{{ pod.collectionName }}</p>
+        <p class="subtitle">{{ pod.artistName }}</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <style>
+.title {
+  font-weight: 700;
+}
 
-  .title {
-    font-weight: 700;
-  }
+.subtitle {
+  color: #aaa;
+  margin-top: -1em;
+}
 
-  .subtitle {
-    color: #aaa;
-    margin-top:-1em;
-  }
+.podcast {
+  margin: 2em;
+  margin-bottom: 5em;
+  border: 1px solid #aaa;
+  padding: 1em;
+  width: 200px;
+}
 
-  .podcast {
-    margin: 2em;
-    margin-bottom: 5em;
-    border: 1px solid #aaa;
-    padding: 1em;
-  }
-
+.container {
+  display: flex;
+}
 </style>

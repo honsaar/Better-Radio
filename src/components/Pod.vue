@@ -1,6 +1,6 @@
 <script setup>
 
-console.log("A");
+// pass through parameters through the object or something, get the ID or URL object to look up
 
 </script>
 
