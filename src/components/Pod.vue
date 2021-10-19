@@ -1,12 +1,10 @@
 <script setup>
-
-// pass through parameters through the object or something, get the ID or URL object to look up
+import podcastItem from "./podcastItem.vue";
 
 </script>
 
 <template>
-  <p>Pod!</p>
-  <p>{{ $route.params.id }}</p>
+  <podcastItem :podID="$route.params.id"></podcastItem>
 </template>
 
 <style>

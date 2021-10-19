@@ -8,3 +8,50 @@ body {
 code {
     font-family: 'Space Mono', monospace;
 }
+
+.contain {
+    max-width: 960px;
+    margin: auto;
+}
+
+.title {
+    font-weight: 700;
+  }
+  
+  .subtitle {
+    color: #aaa;
+    margin-top: -1em;
+  }
+  
+  .podcast {
+    margin: 2em;
+    margin-bottom: 5em;
+    border: 1px solid #aaa;
+    padding: 1em;
+    width: 200px;
+  }
+  
+  .container {
+    display: flex;
+  }
+
+  .episode {
+    border-radius: 0.5ch;
+    border: 1px solid #d5d9dd;
+    padding: 0.833rem;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    margin: 1.728rem auto;
+    display: flex;
+    max-height: 400px;
+  }
+
+  .epImg {
+      padding: 1em;
+      width: 200px;
+  }
+
+  .epInfo {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+  }

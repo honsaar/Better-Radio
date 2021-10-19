@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import podcastItem from "./podcastItem.vue";
 
 // search bar biz here
 
@@ -9,20 +9,6 @@ const post = await fetch(
 
 console.log(post.results);
 
-//  var list = $("#list");
-//     $.get("https://itunes.apple.com/search?term=penumbra&entity=podcast&limit=5", function(res){
-//      var thing = $.parseJSON(res).results;
-
-//     for(var i = 0; i < thing.length; i++){
-//         console.log(thing[i].collectionName, "by", thing[i].artistName);
-//         console.log(thing[i]);
-//         $.get(thing[i].feedUrl, function(data){
-//             console.log(data);
-//         });
-
-//         var newDiv = "<div class='pod'><img src='" + thing[i].artworkUrl100 + "'><h5 id='title'>" + thing[i].collectionName + "</h5><p id='author'>" + thing[i].artistName + "</div>";
-//         list.append(newDiv);
-//     }
 </script>
 
 <template>
@@ -44,24 +30,5 @@ console.log(post.results);
 </template>
 
 <style>
-.title {
-  font-weight: 700;
-}
 
-.subtitle {
-  color: #aaa;
-  margin-top: -1em;
-}
-
-.podcast {
-  margin: 2em;
-  margin-bottom: 5em;
-  border: 1px solid #aaa;
-  padding: 1em;
-  width: 200px;
-}
-
-.container {
-  display: flex;
-}
 </style>

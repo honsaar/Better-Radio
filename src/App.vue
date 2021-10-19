@@ -1,20 +1,18 @@
 <script setup>
-
-import './index.css'
-
-
+import "./index.css";
 </script>
 
 <template>
-<div id="nav">
+  <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/pod/123">About</router-link>
   </div>
-  <Suspense>
-  <router-view/>
-  </Suspense>
+  <div class="contain">
+    <Suspense>
+      <router-view :key="$route.path" />
+    </Suspense>
+  </div>
 </template>
 
 <style>
-
 </style>
