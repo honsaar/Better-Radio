@@ -30,7 +30,7 @@ var image = xml.getElementsByTagName("image")[0].getElementsByTagName("url")[0].
 
 var author = xml.getElementsByTagName("itunes:author")[0].childNodes[0].nodeValue;
 
-var lastDate = xml.getElementsByTagName("lastBuildDate")[0].childNodes[0].nodeValue;
+var lastDate = xml.getElementsByTagName("pubDate")[0].childNodes[0].nodeValue;
 lastDate = lastDate.slice(0, -15);
 
 

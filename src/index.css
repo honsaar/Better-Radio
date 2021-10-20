@@ -10,7 +10,7 @@ code {
 }
 
 .contain {
-    max-width: 960px;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -24,7 +24,7 @@ code {
   }
   
   .podcast {
-    margin: 2em;
+    margin: .5em;
     margin-bottom: 5em;
     border: 1px solid #aaa;
     padding: 1em;
