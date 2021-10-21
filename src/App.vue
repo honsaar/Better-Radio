@@ -11,6 +11,8 @@ import "./index.css";
     <Suspense>
       <router-view :key="$route.path" />
     </Suspense>
+
+    <!-- new component for floating media player -->
   </div>
 </template>
 

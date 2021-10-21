@@ -67,12 +67,12 @@ for(var i = 0; i < getEps.length; i++){
 
 
   <div class="episode" v-for="ep in episodes" v-bind:key="ep">
-    <div class='epImg'>
+    <!-- <div class='epImg'>
       <img :src="image" style="width: 100%; max-width: 200px;">
-    </div>
+    </div> -->
     <div class='epInfo'>
     <p class="title">{{ ep.title }} </p>
-    <div class="subtitle" v-html="ep.descriptHTML"></div>
+    <!-- <div class="subtitle" v-html="ep.descriptHTML"></div> -->
     </div>
   </div>
 
